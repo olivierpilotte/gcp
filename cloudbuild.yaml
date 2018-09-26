@@ -1,9 +1,9 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'build docker image'
   args: ["build", "-t", "gcr.io/cloudops-labs/github-olivierpilotte-gcp:$REVISION_ID", "."]
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'push docker image to registry'
   args: ["push", "gcr.io/cloudops-labs/github-olivierpilotte-gcp:$REVISION_ID"]
-- name: 'gcr.io/cloud-builders/kubectl'
+- name: 'update kubernetes deployment'
   args:
   - set
   - image

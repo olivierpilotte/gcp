@@ -1,0 +1,18 @@
+
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: demo-deployment
+  namespace: default
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: demo-deployment
+    spec:
+      containers:
+        - name: demo-container
+          image: gcr.io/cloudops-labs/github-olivierpilotte-gcp:latest
