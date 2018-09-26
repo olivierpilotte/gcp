@@ -1,0 +1,12 @@
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-service
+spec:
+  type: LoadBalancer
+  selector:
+    run: demo-deployment
+  ports:
+    - port: 80
+      targetPort: 80
