@@ -6,7 +6,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    run: demo-deployment
+    app: demo-deployment
   ports:
     - port: 80
       targetPort: 80
