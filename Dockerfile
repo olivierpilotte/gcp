@@ -8,6 +8,6 @@ COPY index.html /var/www/gcp/index.html
 
 COPY nginx-gcp.conf /etc/nginx/sites-enabled/gcp.conf
 
-RUN systemctl restart nginx
+RUN service nginx reload
 
 EXPOSE 80
